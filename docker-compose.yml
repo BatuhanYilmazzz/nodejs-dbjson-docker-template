@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  api.marsinvestment.com.tr:
+    container_name: marsinvestment.com.tr-api
+    image: marsinvestment.com.tr-api
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    expose:
+      - 3000
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge
